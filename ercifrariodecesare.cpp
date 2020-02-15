@@ -23,7 +23,7 @@ int main(){
                     break;
                 case 2:
                     if(ultimochiaro.empty()==true){
-                        cout<<"Non � ancora stato inserito un messaggio"<<endl;
+                        cout<<"Non è ancora stato inserito un messaggio"<<endl;
 
                     }
                     else{
@@ -32,9 +32,23 @@ int main(){
 
                     break;
                 case 3:
+                     if(ultimocriptato.empty()==true){
+                        cout<<"Non è ancora stato inserito un messaggio da criptare"<<endl;
+
+                    }
+                    else{
+
+                    }
 
                     break;
                 case 4:
+                      if(ultimodecriptato.empty()==true){
+                        cout<<"Non è ancora stato inserito un messaggio da decriptare"<<endl;
+
+                    }
+                    else{
+
+                    }
 
                     break;
                 case 5:
