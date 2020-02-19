@@ -2,33 +2,33 @@
 /*Svetonio narra che Giulio Cesare adottava un codice crittografico per comunicare con il proprio
 esercito durante la campagna di Gallia. Il messaggio in chiaro era costituito da un testo in latino. Il
 messaggio cifrato si otteneva dal messaggio in chiaro traslando ciascuna lettera in avanti di tre
-caratteri lungo l’alfabeto. Ad esempio, la A diveniva D, la B diveniva E, e così via. (Arrivati alla
-fine dell’alfabeto, si ricominciava da capo, come nell’addizione modulo 3.)
-Scrivi un programma che implementi una variante ammodernata dell’algoritmo di Giulio Cesare.
-L’utente ha la possibilità di scegliere fra quattro opzioni contenute in un menu, come segue.
+caratteri lungo lâ€™alfabeto. Ad esempio, la A diveniva D, la B diveniva E, e cosÃ¬ via. (Arrivati alla
+fine dellâ€™alfabeto, si ricominciava da capo, come nellâ€™addizione modulo 3.)
+Scrivi un programma che implementi una variante ammodernata dellâ€™algoritmo di Giulio Cesare.
+Lâ€™utente ha la possibilitÃ  di scegliere fra quattro opzioni contenute in un menu, come segue.
 
 
-• Inserisci messaggio in chiaro. L’utente inserisce un messaggio che deve essere costituito da
-una stringa formata usando l’alfabeto inglese
+â€¢ Inserisci messaggio in chiaro. Lâ€™utente inserisce un messaggio che deve essere costituito da
+una stringa formata usando lâ€™alfabeto inglese
 
-• Visualizza messaggio in chiaro. Il programma visualizza l’ultimo messaggio in chiaro
-inserito dall’utente. Se non è stato ancora inserito alcun messaggio, il programma avvisa
-l’utente e prosegue ripresentando il menu.
+â€¢ Visualizza messaggio in chiaro. Il programma visualizza lâ€™ultimo messaggio in chiaro
+inserito dallâ€™utente. Se non Ã¨ stato ancora inserito alcun messaggio, il programma avvisa
+lâ€™utente e prosegue ripresentando il menu.
 
-• Visualizza messaggio cifrato. Il programma visualizza l’ultimo messaggio inserito
-dall’utente, cifrato usando uno shift di n caratteri. Se non è stato ancora inserito alcun
-messaggio in chiaro, il programma avvisa l’utente e prosegue ripresentando il menu.
+â€¢ Visualizza messaggio cifrato. Il programma visualizza lâ€™ultimo messaggio inserito
+dallâ€™utente, cifrato usando uno shift di n caratteri. Se non Ã¨ stato ancora inserito alcun
+messaggio in chiaro, il programma avvisa lâ€™utente e prosegue ripresentando il menu.
 
-• Visualizza messaggio decifrato. Il programma visualizza la decrittazione dell’ultimo
-messaggio cifrato. Se non è stato ancora cifrato alcun messaggio, il programma avvisa
-l’utente e prosegue ripresentando il menu. Termina. Esce dal programma.
+â€¢ Visualizza messaggio decifrato. Il programma visualizza la decrittazione dellâ€™ultimo
+messaggio cifrato. Se non Ã¨ stato ancora cifrato alcun messaggio, il programma avvisa
+lâ€™utente e prosegue ripresentando il menu. Termina. Esce dal programma.
 
-Nota che se l’utente inserisce un nuovo messaggio in chiaro, l’ultimo messaggio in chiaro inserito
+Nota che se lâ€™utente inserisce un nuovo messaggio in chiaro, lâ€™ultimo messaggio in chiaro inserito
 va perduto.
 Nota
-Nell’esercizio, se l’utente chiede due volte di seguito la visualizzazione del messaggio cifrato dopo
-aver inserito un messaggio in chiaro, quante volte calcoli la cifratura del messaggio? Se la risposta è
-due, modifica il programma in modo che la cifratura di ciascun messaggio in chiaro avvenga al più
+Nellâ€™esercizio, se lâ€™utente chiede due volte di seguito la visualizzazione del messaggio cifrato dopo
+aver inserito un messaggio in chiaro, quante volte calcoli la cifratura del messaggio? Se la risposta Ã¨
+due, modifica il programma in modo che la cifratura di ciascun messaggio in chiaro avvenga al piÃ¹
 una volta. Analogamente deve avvenire per la decifratura del messaggio.*/
 
 #include <iostream>
@@ -42,9 +42,9 @@ una volta. Analogamente deve avvenire per la decifratura del messaggio.*/
 using namespace std;
 
 int main(){
-	
+    system("CHCP 1252");
+    system("cls");
 	bool exist = false;
-
     fstream f1;
     f1.open("criptato.txt", ios::out);
     char decode[MAX], coded[MAX];
@@ -52,16 +52,13 @@ int main(){
     cin.getline(decode, MAX);
 
     for (unsigned int i = 0; i < strlen(decode); i++)
-    {
         f1 << decode[i];
-    }
     f1.close();
 
     f1.open("criptato.txt", ios::in);
     cout << "Lettura del file..." << endl;
     
-    for (unsigned int i = 0; i < strlen(decode); i++)
-    {
+    for (unsigned int i = 0; i < strlen(decode); i++){
         f1 >> coded[i];
         cout << coded[i];
     }
