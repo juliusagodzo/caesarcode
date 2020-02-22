@@ -7,10 +7,10 @@ using namespace std;
 int main(){
     int risposta;
     bool avanti=true;
-    string chiaro="",ultimochiaro="",criptato="",ultimocriptato="",decriptato="",ultimodecriptato="";
+    string chiaro,ultimochiaro="",criptato="",ultimocriptato="",decriptato="",ultimodecriptato="";
     int i,k;
     char alfabeto[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-    string messaggio,parolacriptata,fine;
+    string messaggio,parolacriptata;
     do{
     cout<<"1 Inserire messaggio in chiaro:"<<endl;
     cout<<"2 Visualizza ultimo messaggio in chiaro:"<<endl;
@@ -23,6 +23,7 @@ int main(){
 
                 case 1:
                     cin>>messaggio;
+                    chiaro=messaggio;
 
                       for(i=0;i<messaggio.length();i++){  //4 volte parola ciao
                         for(k=0;k<26;k++){
@@ -46,10 +47,13 @@ int main(){
 
                               }
                           }
-                          fine=fine+parolacriptata[i];
+                          criptato=criptato+parolacriptata[i];
                         }
-                        cout<<fine<<endl;
-                        fine="";
+                        cout<<criptato<<endl;
+                        ultimocriptato=criptato;
+                        criptato="";
+                        ultimochiaro=chiaro;
+                        chiaro="";
                         break;
                 case 2:
                     if(ultimochiaro.empty()==true){
@@ -67,7 +71,7 @@ int main(){
 
                     }
                     else{
-
+                        cout<<"L'ultimo messaggio criptato e'"<<ultimocriptato<<endl;
                     }
 
                     break;
